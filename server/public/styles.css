@@ -1,0 +1,272 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap);
+html {
+  font-size: 10px;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  background-color: #fff;
+  padding: 1.2rem 0.8rem 2rem;
+}
+
+.app-title {
+  color: #fff;
+}
+
+h1 {
+  margin: 0 0 0.8rem;
+}
+
+.btn {
+  background-color: #1579e0;
+  border: 1px solid #ffffff;
+  padding: 0.8rem;
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.4s;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #3b93ed;
+}
+.btn--warning {
+  background-color: #e01515;
+  color: #ffffff;
+}
+.btn--warning:hover {
+  background-color: #ed3b3b;
+}
+
+.form__label {
+  display: block;
+}
+.form__label-title {
+  display: block;
+}
+
+.nav {
+  margin: 0;
+  display: inline;
+}
+.nav__item {
+  border-radius: 0.4rem 0.4rem 0 0;
+  margin-right: 0.4rem;
+  display: inline-block;
+  line-height: 3.6rem;
+  padding: 0 2rem;
+  background-color: #1579e0;
+  color: white;
+  text-decoration: none;
+  border: 0;
+  font-size: 1.4rem;
+}
+.nav__item:hover {
+  background-color: #3b93ed;
+}
+.nav__item--active {
+  background-color: #ffffff;
+  color: #222;
+}
+.nav__item--active:hover {
+  background-color: #ffffff;
+}
+.nav--account .nav__item {
+  margin-right: 0;
+  margin-left: 0.4rem;
+  border-radius: 0.4rem;
+  line-height: 3.4rem;
+}
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer__copy {
+  text-align: center;
+  color: #fff;
+}
+
+.album__art {
+  height: auto;
+  width: 100%;
+  transform: perspective(1000px) translateZ(0px) translateX(0px) translateY(0px) rotateY(0deg);
+  transform-origin: left;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease-in-out;
+}
+
+.album-tile:hover .album__art {
+  transform: perspective(1000px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-60deg);
+  box-shadow: 23px 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+.album__art-link {
+  display: block;
+  background-color: #d3d3d3;
+  background-image: url("https://vinylbase.s3-ap-southeast-2.amazonaws.com/images/lp-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+dt {
+  font-weight: 600;
+}
+
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.album-tile {
+  flex: 0 0 100%;
+  padding: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 640px) {
+  .album-tile {
+    flex: 0 0 33%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .album-tile {
+    flex: 0 0 20%;
+  }
+}
+.album-tile__name {
+  background-color: #d3d3d3;
+  text-align: center;
+  margin: 0;
+}
+.album-tile__name a {
+  color: #222;
+  text-decoration: none;
+  display: block;
+  padding: 0.4rem;
+}
+
+.album-media {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.album-media__block {
+  flex: 0 0 100%;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .album-media__block {
+    flex: 0 0 33%;
+  }
+}
+.album-media__block--media > iframe {
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .album-media__block--media > iframe {
+    height: 100%;
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__inner {
+  background-color: #fff;
+  padding: 2.4rem;
+  width: 40rem;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+.modal__title {
+  margin-top: 0;
+}
+.modal__description {
+  margin-top: 0;
+}
+
+.toaster {
+  position: fixed;
+  top: 10px;
+  background-color: rgba(200, 255, 200, 0.96);
+  left: 50%;
+  width: 360px;
+  margin-left: -180px;
+  border-radius: 12px;
+  padding: 1.2rem 4rem 1.2rem 1.2rem;
+}
+.toaster--error {
+  background-color: rgba(255, 50, 50, 0.96);
+  color: #fff;
+}
+.toaster__text {
+  margin: 0;
+  padding: 0;
+}
+.toaster__close-btn {
+  height: 1.2rem;
+  width: 1.2rem;
+  display: block;
+  border-radius: 50%;
+  background-color: #fff;
+  text-indent: -999rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: 0;
+  cursor: pointer;
+}
+.toaster__close-btn:after {
+  content: "x";
+  display: block;
+  text-indent: 0;
+  position: absolute;
+  top: 0;
+  height: 1.2rem;
+  width: 1.2rem;
+  line-height: 1.2rem;
+  text-align: center;
+  left: 0;
+  font-size: 0.6rem;
+}
+
+/*# sourceMappingURL=styles.css.map*/
